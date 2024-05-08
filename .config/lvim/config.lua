@@ -79,13 +79,12 @@ lvim.plugins = {
     },
     {
         "ellisonleao/gruvbox.nvim",
-        enabled = true,
         priority = 1000
     },
     {
         "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
         event = "BufEnter",
-        init = function()
+        config = function()
             require("toggle_lsp_diagnostics").init()
         end
     },
@@ -93,11 +92,12 @@ lvim.plugins = {
         "nvim-neotest/neotest",
         lazy = true,
         dependencies = {
-            "nvim-neotest/neotest-python",
-            "nvim-neotest/nvim-nio",
-            "nvim-lua/plenary.nvim",
-            "antoinemadec/FixCursorHold.nvim",
-            "nvim-treesitter/nvim-treesitter"
+            { "nvim-neotest/neotest-python",     lazy = true },
+            { "nvim-neotest/nvim-nio",           lazy = true },
+            { "nvim-lua/plenary.nvim",           lazy = true },
+            { "antoinemadec/FixCursorHold.nvim", lazy = true },
+            { "nvim-treesitter/nvim-treesitter", lazy = true },
+            { "mfussenegger/nvim-dap-python",    lazy = true }
         },
         config = function()
             require("neotest").setup({
@@ -119,7 +119,8 @@ lvim.plugins = {
         "mfussenegger/nvim-dap-python",
         config = function()
             require("dap-python").setup()
-        end
+        end,
+        lazy = true,
     },
     {
         'kristijanhusak/vim-dadbod-ui',
@@ -140,7 +141,7 @@ lvim.plugins = {
             'DBUIAddConnection',
             'DBUIFindBuffer',
         },
-        init = function()
+        config = function()
             -- Your DBUI configuration
             vim.g.db_ui_use_nerd_fonts = 1
         end,
@@ -167,7 +168,7 @@ lvim.plugins = {
                 },
             },
         },
-        init = function()
+        config = function()
             require('hurl').setup()
         end,
     },
