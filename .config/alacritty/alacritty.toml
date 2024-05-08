@@ -1,0 +1,32 @@
+live_config_reload = true
+import = ["~/.config/alacritty/themes/themes/gruvbox_light.toml"]
+
+[shell]
+program = "/bin/zsh"
+args = ["-l", "-c", "tmux new -As Alacritty"]
+
+[window]
+# decorations = "transparent"
+dynamic_padding = true
+startup_mode = "Fullscreen"
+# opacity = 0.8
+option_as_alt = "Both"
+
+[font]
+size = 13.80
+# offset = { x = 1 }
+normal = { family = "SpaceMono Nerd Font", style = "Regular" }
+bold = { family = "SpaceMono Nerd Font", style = "Bold" }
+italic = { family = "SpaceMono Nerd Font", style = "Italic" }
+bold_italic = { family = "SpaceMono Nerd Font", style = "Bold Italic" }
+
+[keyboard]
+bindings = [
+    { key = "Left", mods = "Alt", action = "WordLeft" },
+    { key = "Right", mods = "Alt", action = "WordRight" },
+    { key = "Left", mods = "Command", action = "First" },
+    { key = "Right", mods = "Command", action = "Last" },
+]
+
+[selection]
+save_to_clipboard = true
