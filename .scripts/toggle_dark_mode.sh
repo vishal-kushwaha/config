@@ -2,10 +2,10 @@
 
 MODE=`/opt/homebrew/bin/dark-notify -e`
 
-ALACRITTY_CONFIG_PATH="/Users/vkushwaha/Documents/vishal/config/alacritty/alacritty.toml"
-LUNARVIM_CONFIG_PATH="/Users/vkushwaha/Documents/vishal/config/lvim/config.lua"
-TMUX_CONFIG_PATH="/Users/vkushwaha/Documents/vishal/config/tmux/tmux.conf"
-# LAZYGIT_CONFIG_PATH="/Users/vkushwaha/Documents/vishal/config/lazygit/config.yml"
+ALACRITTY_CONFIG_PATH="/Users/vkushwaha/.config/alacritty/alacritty.toml"
+LUNARVIM_CONFIG_PATH="/Users/vkushwaha/.config/lvim/config.lua"
+TMUX_CONFIG_PATH="/Users/vkushwaha/.config/tmux/tmux.conf"
+# LAZYGIT_CONFIG_PATH="/Users/vkushwaha/.config/lazygit/config.yml"
 
 if [[ $MODE == "dark" ]]
 then
