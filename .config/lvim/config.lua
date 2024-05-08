@@ -47,7 +47,6 @@ lvim.builtin.which_key.mappings["a"] = {
     V = { "<cmd>HurlVerbose<CR>", "Run Api in verbose mode" },
     -- Run Hurl request in visual mode
     v = { ":HurlRunner<CR>", "Hurl Runner", mode = "v" },
-
 }
 lvim.builtin.which_key.mappings["l"]["t"] = { "<cmd>ToggleDiag<cr>", "Toggle Diagnostics" }
 lvim.builtin.which_key.mappings["m"] = { "<cmd>messages<cr>", "Messages" }
@@ -148,7 +147,7 @@ lvim.plugins = {
     },
     {
         "jellydn/hurl.nvim",
-        dependencies = { "MunifTanjim/nui.nvim" },
+        dependencies = { "MunifTanjim/nui.nvim", lazy = true },
         ft = "hurl",
         lazy = true,
         opts = {
