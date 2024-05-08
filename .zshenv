@@ -1,0 +1,1 @@
+/Users/vkushwaha/Library/Mobile Documents/com~apple~CloudDocs//Documents/personal/projects/scripts/.zshenv
