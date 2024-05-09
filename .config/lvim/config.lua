@@ -174,7 +174,48 @@ lvim.plugins = {
 }
 
 -- autocommands
-lvim.autocommands = { { "Signal", { pattern = { "SIGUSR1" }, command = "LvimReload" } } }
+lvim.autocommands = {
+    { "Signal", { pattern = { "SIGUSR1" }, command = "LvimReload" } },
+    { "ColorScheme",
+        {
+            callback = function()
+                if vim.o.bg == 'dark' then
+                    -- vim.cmd [[hi NeotestPassed guifg=#b8bb26]]
+                    vim.cmd [[hi NeotestFailed guifg=#fb4934]]
+                    -- vim.cmd [[hi NeotestRunning guifg=#268bd2]]
+                    -- vim.cmd [[hi NeotestSkipped guifg=#2aa198]]
+                    vim.cmd [[hi NeotestFile guifg=#b8bb26]] -- green
+                    vim.cmd [[hi NeotestDir guifg=#83a598]]  -- blue
+                    -- vim.cmd [[hi NeotestNamespace guifg=#d33682]]
+                    -- vim.cmd [[hi NeotestFocused gui=bold,underline cterm=bold,underline]]
+                    vim.cmd [[hi NeotestIndent guifg=#504945]]               -- bg2
+                    vim.cmd [[hi NeotestExpandMarker guifg=#504945]]         -- bg2
+                    vim.cmd [[hi NeotestAdapterName gui=bold guifg=#fb4934]] -- red
+                    -- vim.cmd [[hi NeotestWinSelect guifg=#00f1f5 gui=bold]]
+                    -- vim.cmd [[hi NeotestMarked guifg=#F79000 gui=bold]]
+                    -- vim.cmd [[hi NeotestTarget guifg=#F70067]]
+                    vim.cmd [[hi NeotestTest guifg=#d3869b]] -- purple
+                else
+                    -- vim.cmd [[hi NeotestPassed guifg=#79740e]]
+                    vim.cmd [[hi NeotestFailed guifg=#9d0006]]
+                    -- vim.cmd [[hi NeotestRunning guifg=#268bd2]]
+                    -- vim.cmd [[hi NeotestSkipped guifg=#2aa198]]
+                    vim.cmd [[hi NeotestFile guifg=#79740e]] -- green
+                    vim.cmd [[hi NeotestDir guifg=#076678]]  -- blue
+                    -- vim.cmd [[hi NeotestNamespace guifg=#d33682]]
+                    -- vim.cmd [[hi NeotestFocused gui=bold,underline cterm=bold,underline]]
+                    vim.cmd [[hi NeotestIndent guifg=#d5c4a1]]               -- bg2
+                    vim.cmd [[hi NeotestExpandMarker guifg=#d5c4a1]]         -- bg2
+                    vim.cmd [[hi NeotestAdapterName gui=bold guifg=#9d0006]] -- red
+                    -- vim.cmd [[hi NeotestWinSelect guifg=#00f1f5 gui=bold]]
+                    -- vim.cmd [[hi NeotestMarked guifg=#F79000 gui=bold]]
+                    -- vim.cmd [[hi NeotestTarget guifg=#F70067]]
+                    vim.cmd [[hi NeotestTest guifg=#8f3f71]] -- purple
+                end
+            end
+        }
+    },
+}
 
 -- filetypes
 vim.filetype.add({
