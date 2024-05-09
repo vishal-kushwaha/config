@@ -112,24 +112,4 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-
-# --- begin: webui ---
-
-export COMMIT_MAKE_TARGETS=unit
-export NS_WEB_UI_DIR=/Users/vkushwaha/Documents/netskope/projects/netskope/webui
-export QUALIFY_MAKE_TARGETS=pkg-qualify
-export UNIT_TEST_ENV=unit_testing_without_db
-
-# --- end: webui ---
-
-# --- begin: devbox_ui ---
-
-export NS_BUILD_DIR=/Users/vkushwaha/Documents/netskope/projects/netskope/service
-export NS_DOCKERUI_DIR=/Users/vkushwaha/Documents/netskope/projects/netskope/devbox-ui
-export NS_SQL_DATA=/Users/vkushwaha/Documents/netskope/projects/netskope/.sql/data
-export PDFSCHEDULER_VERSION=latest
-export XDEBUG_CONFIG='start_with_request=yes client_port=10000 client_host=10.254.254.254'
-export XDEBUG_MODE=debug
-export XDEBUG_SESSION='<VSCODE | PHPSTORM>'
-
-# --- end: devbox_ui ---
+source $HOME/.scripts/work.sh
