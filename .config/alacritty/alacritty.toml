@@ -22,10 +22,8 @@ bold_italic = { family = "SpaceMono Nerd Font", style = "Bold Italic" }
 
 [keyboard]
 bindings = [
-    { key = "Left", mods = "Alt", action = "WordLeft" },
-    { key = "Right", mods = "Alt", action = "WordRight" },
-    { key = "Left", mods = "Command", action = "First" },
-    { key = "Right", mods = "Command", action = "Last" },
+    { key = "Right", mods = "Alt", chars = "\u001BF" },
+    { key = "Left", mods = "Alt", chars = "\u001BB" },
 ]
 
 [selection]
