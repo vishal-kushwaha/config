@@ -48,6 +48,10 @@ lvim.builtin.which_key.mappings["a"] = {
     -- Run Hurl request in visual mode
     v = { ":HurlRunner<CR>", "Hurl Runner", mode = "v" },
 }
+lvim.builtin.which_key.mappings["l"]["h"] = {
+    function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+    "Toggle Inlay Hints",
+}
 lvim.builtin.which_key.mappings["l"]["t"] = { "<cmd>ToggleDiag<cr>", "Toggle Diagnostics" }
 lvim.builtin.which_key.mappings["m"] = { "<cmd>messages<cr>", "Messages" }
 lvim.builtin.which_key.mappings["t"] = {
