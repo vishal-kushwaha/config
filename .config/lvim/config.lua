@@ -1,22 +1,17 @@
--- Read the docs: https://www.lunarvim.org/docs/configuration
--- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
--- Forum: https://www.reddit.com/r/lunarvim/
--- Discord: https://discord.com/invite/Xb9B4Ny%
-
 -- vim global variables
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 -- vim options
-vim.opt.background = "dark"
-vim.opt.cmdheight = 0
-vim.opt.foldenable = false
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldmethod = "expr"
-vim.opt.relativenumber = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.termguicolors = true
+vim.o.background = "dark"
+vim.o.cmdheight = 0
+vim.o.foldenable = false
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldmethod = "expr"
+vim.o.relativenumber = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.termguicolors = true
 
 -- lunarvim settings
 lvim.builtin.nvimtree.setup.filters.custom = {
@@ -30,7 +25,6 @@ lvim.builtin.nvimtree.setup.filters.custom = {
 lvim.colorscheme = "gruvbox"
 lvim.format_on_save.enabled = true
 lvim.transparent_window = true
--- lvim.builtin.nvimtree.setup.git.enable = false
 
 -- key-mappings
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
@@ -38,16 +32,6 @@ lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
 
 -- which-key-key-mappings
 lvim.builtin.which_key.mappings["D"] = { "<cmd>DBUIToggle<cr>", "Dadbod UI" }
-lvim.builtin.which_key.mappings["a"] = {
-    name = "API Client",
-    A = { "<cmd>HurlRunner<CR>", "Run All requests" },
-    a = { "<cmd>HurlRunnerAt<CR>", "Run API request" },
-    e = { "<cmd>HurlRunnerToEntry<CR>", "Run API request to entry" },
-    t = { "<cmd>HurlToggleMode<CR>", "Hurl Toggle Mode" },
-    V = { "<cmd>HurlVerbose<CR>", "Run Api in verbose mode" },
-    -- Run Hurl request in visual mode
-    v = { ":HurlRunner<CR>", "Hurl Runner", mode = "v" },
-}
 lvim.builtin.which_key.mappings["l"]["h"] = {
     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
     "Toggle Inlay Hints",
@@ -75,7 +59,7 @@ lvim.plugins = {
                 hashfile = vim.fn.stdpath("data") .. "/config-local",
                 autocommands_create = true, -- Create autocommands (VimEnter, DirectoryChanged)
                 commands_create = true,     -- Create commands (ConfigLocalSource, ConfigLocalEdit, ConfigLocalTrust, ConfigLocalIgnore)
-                silent = false,             -- Disable plugin messages (Config loaded/ignored)
+                silent = true,              -- Disable plugin messages (Config loaded/ignored)
                 lookup_parents = false,     -- Lookup config files in parent directories
             }
         end
@@ -86,22 +70,14 @@ lvim.plugins = {
     },
     {
         "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
-        event = "BufEnter",
         config = function()
             require("toggle_lsp_diagnostics").init()
-        end
+        end,
+        event = "BufEnter",
+        lazy = true
     },
     {
         "nvim-neotest/neotest",
-        lazy = true,
-        dependencies = {
-            { "nvim-neotest/neotest-python",     lazy = true },
-            { "nvim-neotest/nvim-nio",           lazy = true },
-            { "nvim-lua/plenary.nvim",           lazy = true },
-            { "antoinemadec/FixCursorHold.nvim", lazy = true },
-            { "nvim-treesitter/nvim-treesitter", lazy = true },
-            { "mfussenegger/nvim-dap-python",    lazy = true }
-        },
         config = function()
             require("neotest").setup({
                 adapters = {
@@ -116,7 +92,16 @@ lvim.plugins = {
                     })
                 }
             })
-        end
+        end,
+        dependencies = {
+            { "nvim-neotest/neotest-python",     lazy = true },
+            { "nvim-neotest/nvim-nio",           lazy = true },
+            { "nvim-lua/plenary.nvim",           lazy = true },
+            { "antoinemadec/FixCursorHold.nvim", lazy = true },
+            { "nvim-treesitter/nvim-treesitter", lazy = true },
+            { "mfussenegger/nvim-dap-python",    lazy = true }
+        },
+        lazy = true,
     },
     {
         "mfussenegger/nvim-dap-python",
@@ -147,32 +132,6 @@ lvim.plugins = {
         config = function()
             -- Your DBUI configuration
             vim.g.db_ui_use_nerd_fonts = 1
-        end,
-    },
-    {
-        "jellydn/hurl.nvim",
-        dependencies = { "MunifTanjim/nui.nvim", lazy = true },
-        ft = "hurl",
-        lazy = true,
-        opts = {
-            -- Show debugging info
-            debug = false,
-            -- Show notification on run
-            show_notification = false,
-            -- Show response in popup or split
-            mode = "split",
-            -- Default formatter
-            formatters = {
-                json = { 'jq' }, -- Make sure you have install jq in your system, e.g: brew install jq
-                html = {
-                    'prettier',  -- Make sure you have install prettier in your system, e.g: npm install -g prettier
-                    '--parser',
-                    'html',
-                },
-            },
-        },
-        config = function()
-            require('hurl').setup()
         end,
     },
 }
@@ -221,12 +180,6 @@ lvim.autocommands = {
     },
 }
 
--- filetypes
-vim.filetype.add({
-    extension = {
-        hurl = "hurl",
-    }
-})
 
 local ft = require('Comment.ft')
-ft({ 'mysql', 'hurl', 'text' }, ft.get('sh'))
+ft({ 'mysql', 'text' }, ft.get('sh'))
