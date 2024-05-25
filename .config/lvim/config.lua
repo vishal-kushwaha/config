@@ -73,7 +73,7 @@ lvim.plugins = {
         config = function()
             require("toggle_lsp_diagnostics").init()
         end,
-        event = "BufEnter",
+        event = "User FileOpened",
         lazy = true
     },
     {

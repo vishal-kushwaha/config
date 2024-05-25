@@ -53,6 +53,7 @@ windows:
         # - docker compose logs -f ms-platform
         - docker-compose stop mf-platform && cd ../mf-platform && npm install && npm run start:dev
         # - docker compose logs -f mf-platform
+        - 
   - db: cd ../../netskope-qe/dadbod && lvim +DBUIToggle
   - devbox-ui: lvim
   - webui: cd $NS_WEB_UI_DIR && lvim
