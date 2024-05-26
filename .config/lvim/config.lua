@@ -3,7 +3,7 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 -- vim options
-vim.o.background = "dark"
+vim.o.background = "light"
 vim.o.cmdheight = 0
 vim.o.foldenable = false
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
