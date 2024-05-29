@@ -12,7 +12,7 @@ root: ~/Documents/vishal/projects/webapp/
 # Project hooks
 
 # Runs on project start, always
-on_project_start: docker compose -f docker-compose.local.yml up -d
+on_project_start: docker compose -f docker-compose.local.yml up --build -d
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -50,13 +50,16 @@ windows:
   - shell:
       layout: even-horizontal
       panes:
-        - docker:
+        - webapp:
           - docker exec -it webapp_local_django /bin/bash
           - export CELERY_BROKER_URL=$REDIS_URL
           - export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
           - clear
-        - local:
-          -
+        - postgres:
+          - docker exec -it webapp_local_postgres /bin/bash
+          - export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
+          - clear
+          - psql $DATABASE_URL
   - logs:
       layout: even-horizontal
       panes:
