@@ -46,5 +46,5 @@ root: ~/
 
 windows:
   - Jenkins: rancher server switch qa && rancher context switch c-jggfx:p-q645f && rancher kubectl logs -f jenkins-0 -n shared-jenkins | lnav
-  - Slave 1: ssh slave1
-  - Slave 2: ssh slave2
+  - Slave 1: ssh -i ~/.ssh/vm_secrets -l ubuntu $SLAVE1
+  - Slave 2: ssh -i ~/.ssh/vm_secrets -l ubuntu $SLAVE2
