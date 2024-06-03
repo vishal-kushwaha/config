@@ -55,6 +55,9 @@ windows:
           - export CELERY_BROKER_URL=$REDIS_URL
           - export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
           - clear
+        - node:
+          - docker exec -it webapp_local_node /bin/bash
+          - clear
         - postgres:
           - docker exec -it webapp_local_postgres /bin/bash
           - export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
