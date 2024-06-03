@@ -32,51 +32,6 @@ lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
 
 -- which-key-key-mappings
 lvim.builtin.which_key.mappings["D"] = { "<cmd>DBUIToggle<cr>", "Dadbod UI" }
-lvim.builtin.which_key.mappings["g"]["h"] = {
-    name = "+Github",
-    c = {
-        name = "+Commits",
-        c = { "<cmd>GHCloseCommit<cr>", "Close" },
-        e = { "<cmd>GHExpandCommit<cr>", "Expand" },
-        o = { "<cmd>GHOpenToCommit<cr>", "Open To" },
-        p = { "<cmd>GHPopOutCommit<cr>", "Pop Out" },
-        z = { "<cmd>GHCollapseCommit<cr>", "Collapse" },
-    },
-    i = {
-        name = "+Issues",
-        p = { "<cmd>GHPreviewIssue<cr>", "Preview" },
-    },
-    l = {
-        name = "+Litee",
-        t = { "<cmd>LTPanel<cr>", "Toggle Panel" },
-    },
-    r = {
-        name = "+Review",
-        b = { "<cmd>GHStartReview<cr>", "Begin" },
-        c = { "<cmd>GHCloseReview<cr>", "Close" },
-        d = { "<cmd>GHDeleteReview<cr>", "Delete" },
-        e = { "<cmd>GHExpandReview<cr>", "Expand" },
-        s = { "<cmd>GHSubmitReview<cr>", "Submit" },
-        z = { "<cmd>GHCollapseReview<cr>", "Collapse" },
-    },
-    p = {
-        name = "+Pull Request",
-        c = { "<cmd>GHClosePR<cr>", "Close" },
-        d = { "<cmd>GHPRDetails<cr>", "Details" },
-        e = { "<cmd>GHExpandPR<cr>", "Expand" },
-        o = { "<cmd>GHOpenPR<cr>", "Open" },
-        p = { "<cmd>GHPopOutPR<cr>", "PopOut" },
-        r = { "<cmd>GHRefreshPR<cr>", "Refresh" },
-        t = { "<cmd>GHOpenToPR<cr>", "Open To" },
-        z = { "<cmd>GHCollapsePR<cr>", "Collapse" },
-    },
-    t = {
-        name = "+Threads",
-        c = { "<cmd>GHCreateThread<cr>", "Create" },
-        n = { "<cmd>GHNextThread<cr>", "Next" },
-        t = { "<cmd>GHToggleThread<cr>", "Toggle" },
-    },
-}
 lvim.builtin.which_key.mappings["l"]["h"] = {
     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
     "Toggle Inlay Hints",
@@ -180,19 +135,16 @@ lvim.plugins = {
         end,
     },
     {
-        "ldelossa/gh.nvim",
-        event = "VeryLazy",
+        'pwntester/octo.nvim',
         dependencies = {
-            {
-                "ldelossa/litee.nvim",
-                config = function()
-                    require("litee.lib").setup()
-                end,
-            },
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            -- OR 'ibhagwan/fzf-lua',
+            'nvim-tree/nvim-web-devicons',
         },
         config = function()
-            require("litee.gh").setup()
-        end,
+            require "octo".setup({ use_local_fs = true })
+        end
     }
 }
 
