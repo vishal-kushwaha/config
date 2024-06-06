@@ -142,6 +142,7 @@ lvim.plugins = {
             -- OR 'ibhagwan/fzf-lua',
             'nvim-tree/nvim-web-devicons',
         },
+        event = "VeryLazy",
         config = function()
             require "octo".setup({
                 use_local_fs = true,
