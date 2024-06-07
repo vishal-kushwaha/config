@@ -18,6 +18,7 @@ export EDITOR=$VISUAL
 
 export XDG_CONFIG_HOME=$HOME/.config
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_ROOT=$(pyenv root)
 
 alias txq="tmuxinator stop"
 alias u="/Users/vkushwaha/.scripts/update.sh"

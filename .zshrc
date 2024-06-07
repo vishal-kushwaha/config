@@ -112,4 +112,5 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+source <(fzf --zsh)
 source $HOME/.scripts/work.sh

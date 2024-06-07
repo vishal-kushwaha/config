@@ -151,6 +151,13 @@ lvim.plugins = {
                 }
             })
         end
+    },
+    {
+        "NStefan002/screenkey.nvim",
+        cmd = "Screenkey",
+        version = "*",
+        config = true,
+        lazy = true
     }
 }
 
