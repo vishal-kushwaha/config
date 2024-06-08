@@ -1,5 +1,7 @@
 live_config_reload = true
-import = ["~/.config/alacritty/themes/themes/gruvbox_light.toml"]
+import = [
+  "~/.local/share/nvim/lazy/tokyonight.nvim/extras/alacritty/tokyonight_day.toml",
+]
 
 [shell]
 program = "/bin/zsh"
@@ -22,8 +24,8 @@ bold_italic = { family = "SpaceMono Nerd Font", style = "Bold Italic" }
 
 [keyboard]
 bindings = [
-    { key = "Right", mods = "Alt", chars = "\u001BF" },
-    { key = "Left", mods = "Alt", chars = "\u001BB" },
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left", mods = "Alt", chars = "\u001BB" },
 ]
 
 [selection]

@@ -58,6 +58,6 @@ windows:
         # - docker compose logs -f mongodb
         # - docker compose logs -f memcached
   - terminal: open http://developer.vbox && clear
-  - devbox-ui: lvim
-  - webui: cd $NS_WEB_UI_DIR && lvim
-  - service: cd $NS_BUILD_DIR && lvim
+  - devbox-ui: $VISUAL
+  - webui: cd $NS_WEB_UI_DIR && $VISUAL
+  - service: cd $NS_BUILD_DIR && $VISUAL

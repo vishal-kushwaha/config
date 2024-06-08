@@ -12,13 +12,24 @@ function lvimvenv {
     command lvim "$@"
   fi
 }
+function nvimvenv {
+  nvm --version > /dev/null
+  if [[ -e "$VIRTUAL_ENV" && -f "$VIRTUAL_ENV/bin/activate" ]]; then
+    source "$VIRTUAL_ENV/bin/activate"
+    command nvim "$@"
+    deactivate
+  else
+    command nvim "$@"
+  fi
+}
+
 alias lvim=lvimvenv
-export VISUAL="lvim"
+alias nvim=nvimvenv
+export VISUAL="nvim"
 export EDITOR=$VISUAL
 
 export XDG_CONFIG_HOME=$HOME/.config
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PYENV_ROOT=$(pyenv root)
 
 alias txq="tmuxinator stop"
 alias u="/Users/vkushwaha/.scripts/update.sh"
