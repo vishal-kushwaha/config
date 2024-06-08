@@ -12,7 +12,7 @@ root: ~/Documents/netskope/projects/netskope/devbox-ui/
 # Project hooks
 
 # Runs on project start, always
-on_project_start:  "git checkout ngweb-develop && ./restart.py <%=@settings['quick'] != nil ? '--quick': '' %> <%= @settings['branch'] != nil ? '--branch '+@settings['branch'] : ''  %> <%= @settings['env'] != nil ? '--env '+@settings['env'] : '' %> <%= @settings['wipeout'] != nil ? '--wipeout' : ''%>"
+on_project_start: "git checkout ngweb-develop && ./restart.py <%=@settings['quick'] != nil ? '--quick': '' %> <%= @settings['branch'] != nil ? '--branch '+@settings['branch'] : ''  %> <%= @settings['env'] != nil ? '--env '+@settings['env'] : '' %> <%= @settings['wipeout'] != nil ? '--wipeout' : ''%>"
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -53,10 +53,10 @@ windows:
         # - docker compose logs -f ms-platform
         - docker-compose stop mf-platform && cd ../mf-platform && npm install && npm run start:dev
         # - docker compose logs -f mf-platform
-        - 
-  - db: cd ../../netskope-qe/dadbod && lvim +DBUIToggle
-  - devbox-ui: lvim
-  - webui: cd $NS_WEB_UI_DIR && lvim
-  - service: cd $NS_BUILD_DIR && lvim
-  - ms-platform: cd ../ms-platform && lvim
-  - mf-platform: cd ../mf-platform && lvim
+        -
+  - db: cd ../../netskope-qe/dadbod && $VISUAL +DBUIToggle
+  - devbox-ui: $VISUAL
+  - webui: cd $NS_WEB_UI_DIR && $VISUAL
+  - service: cd $NS_BUILD_DIR && $VISUAL
+  - ms-platform: cd ../ms-platform && $VISUAL
+  - mf-platform: cd ../mf-platform && $VISUAL

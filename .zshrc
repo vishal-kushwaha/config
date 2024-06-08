@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PYENV_ROOT=$(pyenv root)
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 source <(fzf --zsh)

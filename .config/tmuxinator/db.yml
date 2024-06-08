@@ -45,4 +45,4 @@ root: ~/Documents/netskope/projects/netskope-qe/dadbod
 # attach: false
 
 windows:
-  - db: lvim +DBUIToggle
+  - db: $VISUAL +DBUIToggle

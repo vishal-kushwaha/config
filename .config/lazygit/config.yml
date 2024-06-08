@@ -1,6 +1,1 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
-
-gui:
-  theme:
-    selectedLineBgColor:
-      - yellow
+/Users/vkushwaha/.local/share/nvim/lazy/tokyonight.nvim/extras/lazygit/tokyonight_day.yml

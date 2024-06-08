@@ -45,28 +45,27 @@ pre_window: export COMPOSE_FILE=/Users/vkushwaha/Documents/vishal/projects/webap
 # attach: false
 
 windows:
-  - editor:
-      lvim
+  - editor: $VISUAL
   - shell:
       layout: even-horizontal
       panes:
         - webapp:
-          - docker exec -it webapp_local_django /bin/bash
-          - export CELERY_BROKER_URL=$REDIS_URL
-          - export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
-          - clear
+            - docker exec -it webapp_local_django /bin/bash
+            - export CELERY_BROKER_URL=$REDIS_URL
+            - export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
+            - clear
         - node:
-          - docker exec -it webapp_local_node /bin/bash
-          - clear
+            - docker exec -it webapp_local_node /bin/bash
+            - clear
         - postgres:
-          - docker exec -it webapp_local_postgres /bin/bash
-          - export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
-          - clear
-          - psql $DATABASE_URL
+            - docker exec -it webapp_local_postgres /bin/bash
+            - export DATABASE_URL="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}"
+            - clear
+            - psql $DATABASE_URL
   - logs:
       layout: even-horizontal
       panes:
         - django:
-          - docker compose logs -f django
+            - docker compose logs -f django
         - node:
-          - docker compose logs -f node
+            - docker compose logs -f node
