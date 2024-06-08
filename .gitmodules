@@ -1,9 +1,6 @@
 [submodule ".config/tmux/plugins/tpm"]
 	path = .config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
-[submodule ".config/tmux/plugins/tmux-gruvbox"]
-	path = .config/tmux/plugins/tmux-gruvbox
-	url = github-personal:vishal-kushwaha/tmux-gruvbox.git
 [submodule ".config/tmux/plugins/tmux-battery"]
 	path = .config/tmux/plugins/tmux-battery
 	url = https://github.com/tmux-plugins/tmux-battery.git

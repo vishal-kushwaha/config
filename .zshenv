@@ -1,17 +1,6 @@
 . "$HOME/.cargo/env"
 
-# lvim
-export PATH=$HOME/.local/bin:$PATH
-function lvimvenv {
-  nvm --version > /dev/null
-  if [[ -e "$VIRTUAL_ENV" && -f "$VIRTUAL_ENV/bin/activate" ]]; then
-    source "$VIRTUAL_ENV/bin/activate"
-    command lvim "$@"
-    deactivate
-  else
-    command lvim "$@"
-  fi
-}
+# nvim
 function nvimvenv {
   nvm --version > /dev/null
   if [[ -e "$VIRTUAL_ENV" && -f "$VIRTUAL_ENV/bin/activate" ]]; then
@@ -23,7 +12,6 @@ function nvimvenv {
   fi
 }
 
-alias lvim=lvimvenv
 alias nvim=nvimvenv
 export VISUAL="nvim"
 export EDITOR=$VISUAL

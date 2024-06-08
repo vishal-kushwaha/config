@@ -19,9 +19,3 @@ fi
 
 # reload tmux
 /opt/homebrew/bin/tmux source $TMUX_CONFIG_PATH
-
-# reload lunarvim
-pgrep lvim
-for pid in $(pgrep lvim); do
-	kill -SIGUSR1 $pid
-done
