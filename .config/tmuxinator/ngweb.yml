@@ -54,9 +54,9 @@ windows:
         - docker-compose stop mf-platform && cd ../mf-platform && npm install && npm run start:dev
         # - docker compose logs -f mf-platform
         -
-  - db: cd ../../netskope-qe/dadbod && $VISUAL +DBUIToggle
-  - devbox-ui: $VISUAL
-  - webui: cd $NS_WEB_UI_DIR && $VISUAL
-  - service: cd $NS_BUILD_DIR && $VISUAL
-  - ms-platform: cd ../ms-platform && $VISUAL
-  - mf-platform: cd ../mf-platform && $VISUAL
+  - db: cd ../../netskope-qe/dadbod && nvim +DBUIToggle
+  - devbox-ui: nvim
+  - webui: cd $NS_WEB_UI_DIR && nvim
+  - service: cd $NS_BUILD_DIR && nvim
+  - ms-platform: cd ../ms-platform && nvim
+  - mf-platform: cd ../mf-platform && nvim

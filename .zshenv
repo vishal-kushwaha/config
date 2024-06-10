@@ -2,7 +2,6 @@
 
 # nvim
 function nvimvenv {
-  nvm --version > /dev/null
   if [[ -e "$VIRTUAL_ENV" && -f "$VIRTUAL_ENV/bin/activate" ]]; then
     source "$VIRTUAL_ENV/bin/activate"
     command nvim "$@"
@@ -25,3 +24,4 @@ alias v=$VISUAL
 alias dbs="tmuxinator start db"
 alias dbq="tmuxinator stop db"
 alias cfg='/usr/bin/git --git-dir=/Users/vkushwaha/.cfg/ --work-tree=/Users/vkushwaha'
+alias config='/opt/homebrew/bin/lazygit --git-dir=/Users/vkushwaha/.cfg/ --work-tree=/Users/vkushwaha'

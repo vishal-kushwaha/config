@@ -45,7 +45,7 @@ pre_window: export COMPOSE_FILE=/Users/vkushwaha/Documents/vishal/projects/webap
 # attach: false
 
 windows:
-  - editor: $VISUAL
+  - editor: nvim
   - shell:
       layout: even-horizontal
       panes:

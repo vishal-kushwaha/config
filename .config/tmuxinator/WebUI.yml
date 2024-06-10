@@ -45,7 +45,7 @@ root: ~/Documents/netskope/projects/netskope-qe/WebUI/
 # attach: false
 
 windows:
-  - WebUI: $VISUAL
-  - pylark-webui-libs: cd ../pylark-webui-libs && $VISUAL
-  # - pylark-webapi-libs: cd ../pylark-webapi-libs && $VISUAL
-  # - pytest-selenium-patcher: cd ../pytest-selenium-patcher && $VISUAL
+  - WebUI: nvim
+  - pylark-webui-libs: cd ../pylark-webui-libs && nvim
+  # - pylark-webapi-libs: cd ../pylark-webapi-libs && nvim
+  # - pytest-selenium-patcher: cd ../pytest-selenium-patcher && nvim
