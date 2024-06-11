@@ -23,18 +23,4 @@ return {
       vim.g.db_ui_use_nerd_fonts = 1
     end,
   },
-  --   {
-  --     "hrsh7th/nvim-cmp",
-  --     dependencies = {
-  --       {
-  --         "kristijanhusak/vim-dadbod-completion",
-  --         ft = { "sql", "mysql", "plsql" },
-  --         lazy = true,
-  --       },
-  --     },
-  --     ---@param opts cmp.ConfigSchema
-  --     opts = function(_, opts)
-  --       table.insert(opts.sources, { name = "vim-dadbod-completion" })
-  --     end,
-  --   },
 }

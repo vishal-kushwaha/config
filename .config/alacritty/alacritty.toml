@@ -8,11 +8,9 @@ program = "/bin/zsh"
 args = ["-l", "-c", "tmux new -As Alacritty"]
 
 [window]
-# decorations = "transparent"
 dynamic_padding = true
-startup_mode = "Fullscreen"
-# opacity = 0.8
 option_as_alt = "Both"
+startup_mode = "Fullscreen"
 
 [font]
 size = 13.80
