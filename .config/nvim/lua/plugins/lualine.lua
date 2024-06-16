@@ -2,8 +2,8 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = {
     sections = {
-      lualine_y = { "progress" },
-      lualine_z = { "location" },
+      lualine_y = { "location" },
+      lualine_z = { "progress" },
     },
   },
 }
