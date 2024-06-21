@@ -47,5 +47,6 @@ root: ~/Documents/netskope/projects/netskope-qe/WebUI/
 windows:
   - WebUI: nvim
   - pylark-webui-libs: cd ../pylark-webui-libs && nvim
+  - SCIM: cd ../scim_tests && nvim
   # - pylark-webapi-libs: cd ../pylark-webapi-libs && nvim
   # - pytest-selenium-patcher: cd ../pytest-selenium-patcher && nvim
