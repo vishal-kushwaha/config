@@ -1,7 +1,7 @@
-# /Users/vkushwaha/.config/tmuxinator/WebUI.yml
+# /Users/vkushwaha/.config/tmuxinator/mysite.yml
 
-name: WebUI
-root: ~/Documents/netskope/projects/netskope-qe/WebUI/
+name: mysite
+root: ~/Documents/vishal/projects/mysite/
 
 # Optional tmux socket
 # socket_name: foo
@@ -27,12 +27,12 @@ root: ~/Documents/netskope/projects/netskope-qe/WebUI/
 # on_project_stop: command
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: pyenv activate WebUI
+# pre_window: rbenv shell 2.0.0-p247
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
 
-# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# Change the command to call tmux. This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
@@ -45,8 +45,6 @@ root: ~/Documents/netskope/projects/netskope-qe/WebUI/
 # attach: false
 
 windows:
-  - WebUI: nvim
-  - pylark-webui-libs: cd ../pylark-webui-libs && nvim
-  # - SCIM: cd ../scim_tests && nvim
-  # - pylark-webapi-libs: cd ../pylark-webapi-libs && nvim
-  # - pytest-selenium-patcher: cd ../pytest-selenium-patcher && nvim
+  - editor: nvim
+  - server: npm run dev -- --open
+  - tests: npm run test

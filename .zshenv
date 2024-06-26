@@ -19,6 +19,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 alias txq="tmuxinator stop"
+alias t="osascript -e 'tell app \"System Events\" to tell appearance preferences to set dark mode to not dark mode'"
 alias u="/Users/vkushwaha/.scripts/update.sh"
 alias v=$VISUAL
 alias dbs="tmuxinator start db"
