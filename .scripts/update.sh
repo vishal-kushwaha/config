@@ -8,4 +8,4 @@ brew autoremove
 brew cleanup
 
 echo "\n==> Updating neovim"
-nvim --headless "+Lazy! sync" +qa
+nvim --headless "+Lazy! sync" +qa >/dev/null

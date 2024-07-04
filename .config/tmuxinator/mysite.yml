@@ -46,5 +46,4 @@ root: ~/Documents/vishal/projects/mysite/
 
 windows:
   - editor: nvim
-  - server: npm run dev -- --open
-  - tests: npm run test
+  - server: npm run dev -- --open --host
