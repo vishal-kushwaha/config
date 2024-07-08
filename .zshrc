@@ -115,3 +115,4 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 source <(fzf --zsh)
 source $HOME/.scripts/work.sh
+source $HOME/.scripts/personal.sh
