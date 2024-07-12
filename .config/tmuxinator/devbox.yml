@@ -12,7 +12,7 @@ root: ~/Documents/netskope/projects/netskope/devbox-ui/
 # Project hooks
 
 # Runs on project start, always
-on_project_start: "git checkout develop && ./restart.py <%=@settings['quick'] != nil ? '--quick': '' %> <%= @settings['branch'] != nil ? '--branch '+@settings['branch'] : ''  %> <%= @settings['env'] != nil ? '--env '+@settings['env'] : '' %> <%= @settings['wipeout'] != nil ? '--wipeout' : ''%> && docker compose down mongodb pdfscheduler-scheduler pdfscheduler-worker"
+on_project_start: "git checkout develop && git pull && ./restart.py <%=@settings['quick'] != nil ? '--quick': '' %> <%= @settings['branch'] != nil ? '--branch '+@settings['branch'] : ''  %> <%= @settings['env'] != nil ? '--env '+@settings['env'] : '' %> <%= @settings['wipeout'] != nil ? '--wipeout' : ''%> && docker compose down mongodb pdfscheduler-scheduler pdfscheduler-worker"
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -27,7 +27,7 @@ on_project_start: "git checkout develop && ./restart.py <%=@settings['quick'] !=
 on_project_stop: docker compose down
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: "source /Users/vkushwaha/Documents/netskope/projects/netskope/devbox-ui/.devbox_env"
+pre_window: nvm --version
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
