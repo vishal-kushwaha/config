@@ -9,3 +9,7 @@ brew cleanup
 
 echo "\n==> Updating neovim"
 nvim --headless "+Lazy! sync" +qa >/dev/null
+
+echo "\n==> Updating config"
+/usr/bin/git --git-dir=/Users/vkushwaha/.cfg/ --work-tree=/Users/vkushwaha pull
+/usr/bin/git --git-dir=/Users/vkushwaha/.cfg/ --work-tree=/Users/vkushwaha submodule foreach git pull
