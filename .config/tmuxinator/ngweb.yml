@@ -48,12 +48,11 @@ windows:
   - logs:
       panes:
         - docker compose logs -f web | egrep -v 'xdebug|Deprecat'
-        - docker-compose stop ms-platform && cd ../ms-platform && npm install && npm run start:dev
+        - docker compose stop ms-platform && cd ../ms-platform && npm install && npm run start:dev
         # - docker compose logs -f ms-platform
-        - docker-compose stop mf-platform && cd ../mf-platform && npm install && npm run start:dev
+        - docker compose stop mf-platform && cd ../mf-platform && npm install && npm run start:dev
         # - docker compose logs -f mf-platform
         -
-  - db: cd ../../netskope-qe/dadbod && nvim +DBUIToggle
   - devbox-ui: nvim
   - webui: cd $NS_WEB_UI_DIR && nvim
   - service: cd $NS_BUILD_DIR && nvim
