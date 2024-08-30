@@ -2,7 +2,7 @@
 
 # nvim
 function nvimvenv {
-  nvm --version
+  nvm --version > /dev/null
   if [[ -e "$VIRTUAL_ENV" && -f "$VIRTUAL_ENV/bin/activate" ]]; then
     source "$VIRTUAL_ENV/bin/activate"
     command nvim "$@"
