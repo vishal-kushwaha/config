@@ -71,14 +71,12 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 zstyle ':omz:plugins:nvm' lazy yes
-zstyle ':omz:plugins:nvm' lazy-cmd node npm nvim tmux tmuxinator txs
+zstyle ':omz:plugins:nvm' lazy-cmd node npm nvim
 zstyle ':omz:plugins:nvm' autoload yes
 plugins=(
   aliases
   fzf
   nvm
-  tmux
-  tmuxinator
   zsh-autosuggestions
 )
 
