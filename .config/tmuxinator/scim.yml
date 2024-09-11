@@ -1,0 +1,63 @@
+# /Users/vkushwaha/.config/tmuxinator/scim.yml
+
+name: scim
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Note that the pre and post options have been deprecated and will be replaced by
+# project hooks.
+
+# Project hooks
+
+# Runs on project start, always
+on_project_start: rancher context switch c-nwgg2:p-84snk
+
+# Run on project start, the first time
+# on_project_first_start: command
+
+# Run on project start, after the first time
+# on_project_restart: command
+
+# Run on project exit ( detaching from tmux session )
+# on_project_exit: command
+
+# Run on project stop
+# on_project_stop: command
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux. This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: editor
+
+# Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
+# startup_pane: 1
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+windows:
+  - versions:
+      panes:
+        - ms-platform: rancher kubectl describe pod $(rancher kubectl get pods -n ngweb | grep "ms-platform" | awk '{print $1}') -n ngweb | grep "Image:\ "
+        - mf-platform: rancher kubectl describe pod $(rancher kubectl get pods -n ngweb | grep "mf-platform" | awk '{print $1}') -n ngweb | grep "Image:\ "
+        - ms-rbac: rancher kubectl describe pod $(rancher kubectl get pods -n ngweb | grep "ms-rbac" | awk '{print $1}') -n ngweb | grep "Image:\ "
+        - mf-rbac: rancher kubectl describe pod $(rancher kubectl get pods -n ngweb | grep "mf-rbac" | awk '{print $1}') -n ngweb | grep "Image:\ "
+  - platform:
+      layout: even-horizontal
+      panes:
+        - ms-platform: rancher kubectl logs -f $(rancher kubectl get pods -n ngweb | grep "ms-platform" | awk '{print $1}') -n ngweb
+        - mf-platform: rancher kubectl logs -f $(rancher kubectl get pods -n ngweb | grep "mf-platform" | awk '{print $1}') -n ngweb
+  - rbac:
+      layout: even-horizontal
+      panes:
+        - ms-rbac: rancher kubectl logs -f $(rancher kubectl get pods -n ngweb | grep "ms-rbac" | awk '{print $1}') -n ngweb
+        - mf-rbac: rancher kubectl logs -f $(rancher kubectl get pods -n ngweb | grep "mf-rbac" | awk '{print $1}') -n ngweb
