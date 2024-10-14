@@ -1,3 +1,21 @@
+[submodule ".config/tmux/plugins/tpm"]
+	path = .config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
+[submodule ".config/tmux/plugins/tmux-battery"]
+	path = .config/tmux/plugins/tmux-battery
+	url = https://github.com/tmux-plugins/tmux-battery.git
+[submodule ".config/tmux/plugins/tmux-cpu"]
+	path = .config/tmux/plugins/tmux-cpu
+	url = https://github.com/tmux-plugins/tmux-cpu.git
+[submodule ".config/tmux/plugins/tmux-mode-indicator"]
+	path = .config/tmux/plugins/tmux-mode-indicator
+	url = https://github.com/MunifTanjim/tmux-mode-indicator.git
+[submodule ".config/alacritty/themes"]
+	path = .config/alacritty/themes
+	url = https://github.com/alacritty/alacritty-theme.git
 [submodule ".config/lazygit/themes/lazygit"]
 	path = .config/lazygit/themes/lazygit
 	url = https://github.com/catppuccin/lazygit.git
+[submodule ".config/tmux/plugins/tmux"]
+	path = .config/tmux/plugins/tmux
+	url = https://git::@github.com/catppuccin/tmux.git
