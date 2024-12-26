@@ -27,3 +27,4 @@ alias dbs="tmuxinator start db"
 alias dbq="tmuxinator stop db"
 alias cfg='/usr/bin/git --git-dir=/Users/vkushwaha/.cfg/ --work-tree=/Users/vkushwaha'
 alias config='/opt/homebrew/bin/lazygit --git-dir=/Users/vkushwaha/.cfg/ --work-tree=/Users/vkushwaha'
+alias gg="/opt/homebrew/bin/lazygit"
