@@ -1,6 +1,6 @@
 # /Users/vkushwaha/.config/tmuxinator/WebUI.yml
 
-name: WebUI
+name: webui
 root: ~/Documents/netskope/projects/netskope-qe/WebUI/
 
 # Optional tmux socket

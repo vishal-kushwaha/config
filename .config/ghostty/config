@@ -1,0 +1,16 @@
+command = /bin/zsh -l -c "tmux new -As Ghostty"
+
+confirm-close-surface
+
+font-family = SpaceMono Nerd Font Mono
+font-family-bold = SpaceMono Nerd Font Mono Bold
+font-family-bold-italic = SpaceMono Nerd Font Mono Bold Italic
+font-family-italic = SpaceMono Nerd Font Mono Italic
+font-size = 14
+
+quit-after-last-window-closed = true
+
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+window-padding-x = 0
+window-padding-y = 0
