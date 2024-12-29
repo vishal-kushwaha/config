@@ -12,7 +12,11 @@ root: ~/Documents/netskope/projects/netskope/devbox-ui/
 # Project hooks
 
 # Runs on project start, always
-on_project_start: "git checkout ngweb-rbac-v3-develop && git pull && ./restart.py <%=@settings['quick'] != nil ? '--quick': '' %> <%= @settings['branch'] != nil ? '--branch '+@settings['branch'] : ''  %> <%= @settings['env'] != nil ? '--env '+@settings['env'] : '' %> <%= @settings['wipeout'] != nil ? '--wipeout' : ''%> && docker compose down mongodb pdfscheduler-scheduler pdfscheduler-worker"
+on_project_start: 
+  - git checkout ngweb-rbac-v3-develop
+  - git pull
+  - ./restart.py <%=@settings['quick'] != nil ? '--quick': '' %> <%= @settings['branch'] != nil ? '--branch '+@settings['branch'] : ''  %> <%= @settings['env'] != nil ? '--env '+@settings['env'] : '' %> <%= @settings['wipeout'] != nil ? '--wipeout' : ''%>
+  - docker compose down mongodb pdfscheduler-scheduler pdfscheduler-worker
 
 # Run on project start, the first time
 # on_project_first_start: command
