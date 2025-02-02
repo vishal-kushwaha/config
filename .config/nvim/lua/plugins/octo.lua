@@ -2,6 +2,7 @@ return {
   "pwntester/octo.nvim",
   dependencies = {
     "nvim-lspconfig",
+    "ibhagwan/fzf-lua",
   },
   opts = {
     use_local_fs = true,

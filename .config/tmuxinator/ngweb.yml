@@ -52,17 +52,17 @@ windows:
   - logs:
       panes:
         - ms-platform:
-            - docker compose stop ms-platform
-            - cd ../ms-platform
-            - npm install
-            - npm run start:dev
-            # - docker compose logs -f ms-platform
+            # - docker compose stop ms-platform
+            # - cd ../ms-platform
+            # - npm install
+            # - npm run start:dev
+            - docker compose logs -f ms-platform
         - mf-platform:
-            - docker compose stop mf-platform
-            - cd ../mf-platform
-            - npm install
-            - npm run start:dev
-            # - docker compose logs -f mf-platform
+            # - docker compose stop mf-platform
+            # - cd ../mf-platform
+            # - npm install
+            # - npm run start:dev
+            - docker compose logs -f mf-platform
         - ms-rbac:
             # - docker compose stop ms-rbac
             # - cd ../ms-rbac

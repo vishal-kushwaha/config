@@ -1,5 +1,3 @@
-. "$HOME/.cargo/env"
-
 # nvim
 function nvimvenv {
   nvm --version > /dev/null
@@ -18,6 +16,7 @@ export EDITOR=$VISUAL
 
 export XDG_CONFIG_HOME=$HOME/.config
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export HOMEBREW_AUTO_UPDATE_SECS=86400
 
 alias txq="tmuxinator stop"
 alias t="osascript -e 'tell app \"System Events\" to tell appearance preferences to set dark mode to not dark mode'"

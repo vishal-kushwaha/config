@@ -48,6 +48,7 @@ windows:
   - WebUI:
   - webui-libs: cd ../pylark-webui-libs
   - api-libs: cd ../webui-ng-api-libs
+  - webapi: cd ../webui-core-v2-api-tests
   # - SCIM: cd ../scim_tests && nvim
   # - pylark-webapi-libs: cd ../pylark-webapi-libs && nvim
   # - pytest-selenium-patcher: cd ../pytest-selenium-patcher && nvim
