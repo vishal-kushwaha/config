@@ -77,6 +77,7 @@ plugins=(
   aliases
   fzf
   nvm
+  taskwarrior
   tmux
   tmuxinator
   zsh-autosuggestions

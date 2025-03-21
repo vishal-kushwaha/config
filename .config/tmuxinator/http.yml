@@ -1,7 +1,7 @@
 # /Users/vkushwaha/.config/tmuxinator/db.yml
 
-name: hURL
-root: ~/Documents/netskope/projects/netskope-qe/hurl
+name: http
+root: ~/Documents/netskope/projects/netskope-qe/http
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,4 +45,5 @@ root: ~/Documents/netskope/projects/netskope-qe/hurl
 # attach: false
 
 windows:
-  - db: nvim
+  - Kulala: nvim
+  - hURL: cd ../hurl && nvim
