@@ -46,4 +46,3 @@ root: ~/Documents/netskope/projects/netskope-qe/http
 
 windows:
   - Kulala: nvim
-  - hURL: cd ../hurl && nvim

@@ -76,8 +76,8 @@ zstyle ':omz:plugins:nvm' autoload yes
 plugins=(
   aliases
   fzf
+  gh
   nvm
-  taskwarrior
   tmux
   tmuxinator
   zsh-autosuggestions

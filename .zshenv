@@ -17,6 +17,7 @@ export EDITOR=$VISUAL
 export XDG_CONFIG_HOME=$HOME/.config
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export HOMEBREW_AUTO_UPDATE_SECS=86400
+export KUBECONFIG=~/.kube/config.fed1mp:~/.kube/config.stg01:~/.kube/config.qa01:$KUBECONFIG
 
 alias cfg='/usr/bin/git --git-dir=/Users/vkushwaha/.cfg/ --work-tree=/Users/vkushwaha'
 alias config='/opt/homebrew/bin/lazygit --git-dir=/Users/vkushwaha/.cfg/ --work-tree=/Users/vkushwaha'
