@@ -1,0 +1,6 @@
+views:
+  v1/pods:
+    sortColumn: NAME:asc
+    columns:
+      - NAME
+      - VERSION:.spec.containers[0].image | capture(".*:(?P<version>.*)") | .version
